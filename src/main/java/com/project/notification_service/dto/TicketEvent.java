@@ -1,4 +1,4 @@
-package com.project.notification_service.messaging;
+package com.project.notification_service.dto;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
