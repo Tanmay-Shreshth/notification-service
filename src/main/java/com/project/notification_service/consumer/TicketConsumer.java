@@ -3,7 +3,7 @@ package com.project.notification_service.consumer;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
-import com.project.notification_service.messaging.TicketEvent;
+import com.project.notification_service.dto.TicketEvent;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,8 +12,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class TicketConsumer {
     
-    @RabbitListener(queues = "ticket.notification.queue")
+    @RabbitListener(queues = "ticket.notification.queue", containerFactory = "rabbitListenerContainerFactory")
     public void handleTicketEvent(TicketEvent event){
+
+
+    //     if (event.getTicketId() != null) {
+    //     throw new RuntimeException("Simulated failure");
+    // }
+
+    // log.info("Processed event successfully");
+
 
         log.info("Received ticket event: {}", event);
 

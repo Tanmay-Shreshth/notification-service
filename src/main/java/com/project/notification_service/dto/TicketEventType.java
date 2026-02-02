@@ -1,4 +1,4 @@
-package com.project.notification_service.messaging;
+package com.project.notification_service.dto;
 
 public enum TicketEventType {
     CREATED,
